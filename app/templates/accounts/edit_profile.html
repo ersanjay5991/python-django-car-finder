@@ -1,0 +1,28 @@
+{% extends 'based.html' %}
+{% load staticfiles %}
+{% block head %}
+    <title>Edit profile</title>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+
+
+    <div class="pd bg">
+    <form method='post'>
+    {% csrf_token %}
+        <label>Enter first name :</label><br>
+        {{ form.first_name }}<br><br>
+        <label>Enter last name :</label><br>
+        {{ form.last_name }}<br><br>
+        <label>Enter email :</label><br>
+        {{ form.email }}<br><br>
+
+    <button type="submit">Submit</button>
+    </form>
+    </div>
+
+</div>
+</div>
+{% endblock %}

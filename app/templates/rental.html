@@ -1,0 +1,68 @@
+{% extends "based.html" %}
+
+{% block content %}
+
+<script>
+//custom js for book-now button
+function bookme(thise){
+id=thise.parentElement.parentElement.firstElementChild.textContent.slice(1);
+document.location="/booknow?vid="+id
+}
+</script>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+  
+
+
+<div class="container">
+	<div class="row">
+ 
+
+
+               
+               <input type="text" id="myInput" placeholder="Search here" onkeyup="myFunction()" placeholder="Search for names..">
+
+<table id="myTable" border="1" style="tr,td:padding:5px !important;" class="table table-striped custab">
+  
+  <tr> <th>Vehicle_ID: </th> <th> Make  </th> <th> Short_Model </th>  <th> trim </th><th> Currentl_Available</th> <th> Book </th></tr>
+  {% for Car in car %}  
+
+    <tr><td> {{Car.Vehicle_ID}}</td> 
+    <td> {{Car.Make}}</td> 
+    <td> {{Car.Short_Model}}</td> 
+    <td> {{Car.Trim}}</td> 
+    <td> {{Car.Currentl_Available}}</td> 
+    
+    
+    
+	<td>    <button onclick="bookme(this)"> book now</button> </td>
+
+    </tr>
+  
+ {% endfor %} 
+
+
+</table>
+</div>
+</div>
+
+
+{% endblock %}

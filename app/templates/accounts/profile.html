@@ -1,0 +1,33 @@
+{% extends 'based.html' %}
+{% load staticfiles %}
+{% block head %}
+    <title>profile</title>
+{% endblock %}
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+
+    <div class="pd bg">
+    <h1>
+       Profile
+        <hr>
+    </h1>
+    <h3>
+        Name: {{ user.first_name }}&nbsp;
+        {{ user.last_name }}<br><br>
+       Username: {{ user}}<br><br>
+       Email: {{ user.email }}<br><br>
+        phone: {{ user.userprofile.phone }}<br><br>
+        city:  {{ user.userprofile.city }} <br><br>
+        website:  {{ user.userprofile.website }}<br><br>
+        Image:
+        <img src="{{MEDIA_URL}}{{ user.userprofile.sample_image.url }}" height="222" width="222">
+
+    </h3>
+    </div>
+
+</div>
+</div>
+{% endblock %}

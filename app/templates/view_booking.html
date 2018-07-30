@@ -1,0 +1,50 @@
+{% extends "based.html" %}
+
+{% block content %}
+
+
+
+
+  <p>The following record shows your booking history:</p>
+
+  
+<div class="container">
+    <div class="row xcol-md-6 xcol-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>EntryID</th>
+            <th>UID</th>
+            <th>VID</th>
+            <th>Make</th>
+            <th>Short Model</th>
+            <th>Long Model</th>
+            <th>Trim</th>
+            <th>Derivative</th>
+            <th>Year introduced</th>
+            <th>Year discontinued</th>
+            <th>Currently Available</th>
+			
+        </tr>
+    </thead>
+	{% for entry in bookings %} 
+            <tr>
+                <td>{{entry.id}}</td>
+                <td>{{entry.used_email}}</td>
+                <td>{{entry.Vehicle_ID}}</td>
+                <td>{{entry.Make}}</td>
+                <td>{{entry.Short_Model}}</td>
+                <td>{{entry.Long_Model}}</td>
+                <td>{{entry.Trim}}</td>
+                <td>{{entry.Derivative}}</td>
+                <td>{{entry.Year_introduced}}</td>
+                <td>{{entry.Year_discontinued}}</td>
+                <td>{{entry.Currentl_Available}}</td>
+            </tr>
+	{% endfor %} 
+    </table>
+    </div>
+</div>
+
+
+{% endblock %}

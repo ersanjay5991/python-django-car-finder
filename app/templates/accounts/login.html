@@ -1,0 +1,31 @@
+{% extends 'based.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+
+<div class="pd bg">
+    <h1>
+    Welcome
+    </h1>
+    <p>
+    you can login here!
+    </p>
+    <h2>
+    Login
+    </h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">
+    login
+    </button>
+    </form>
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

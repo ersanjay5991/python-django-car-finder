@@ -1,0 +1,97 @@
+{% extends "based.html" %}
+
+{% block content %}
+
+
+
+
+
+	<div class="container">
+
+		<h1><center>  {{ car.Long_Model}}  </center> </h1>
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1">
+						  	<img src="{{car.model_pic.url}}" width="400px" height="400" />
+						  	</div>
+						  <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+						  
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  
+						  
+						</ul>
+						
+					</div>
+					<div class="details col-md-6">
+
+						<table id="myTable"  class="table table-bordered">
+							<tr>
+								<td> Derivative   </td>
+								<td> <h4 class=""> {{ car.Derivative}} </h4>  </td>
+
+							</tr>
+
+							<tr>
+								<td> Vehicle_ID </td>
+								<td>  {{ car.Vehicle_ID}}</td>
+
+							</tr>
+
+							<tr>
+								<td>Short_Model </td>
+								<td>{{ car.Short_Model}}  </td>
+
+							</tr>
+							
+							<tr>
+								<td> Long_Model </td>
+								<td> {{ car.Long_Model}}  </td>
+
+							</tr>
+							<tr>
+								<td> Trim </td>
+								<td> {{ car.Trim}}  </td>
+
+							</tr>
+
+							<tr>
+								<td> Year_introduced </td>
+								<td> {{ car.Year_introduced}} </td>
+
+							</tr>
+							<tr>
+								<td> Year_discontinued </td>
+								<td> {{ car.Year_discontinued}} </td>
+
+							</tr>
+							<tr>
+								<td> Currentl_Available</td>
+								<td> {{ car.Currentl_Available}} </td>
+
+							</tr>
+
+
+						</table>
+  
+ 
+  
+						
+						
+						
+						</div>
+						<p class="product-description">
+						.</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'based.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+<style type="text/css">
+lable{width: 250px !important;}
+
+label{ width: 250px !important; }
+input {
+   
+    width: 503px;
+
+}
+</style>
+<div class="container">
+    <div class="row">
+
+    <div class="pd bg">
+    <h2>Register</h2>
+        <br>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+    </div>
+
+</div>
+
+</div>
+{% endblock %}

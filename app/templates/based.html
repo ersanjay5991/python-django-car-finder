@@ -1,0 +1,162 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title> VehicalFinder</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/index/">VehicalFinder System </a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+      <li class="active"><a  class=" fa fa-home" href="/index/">Home</a></li>
+      <li><a href="/about/">About uS</a></li>
+      <li><a class="fa fa-search" href="/vehicle/">vehicle Find </a></li>
+      <li><a href="/contactus/"> Contact</a></li>
+    
+
+ {% if user.is_authenticated %}
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li class="dropdown pdt">
+                            <button class="btn" type="button" data-toggle="dropdown">Profile
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/profile/">View Profile</a></li>
+                                <li><a href="/profile/edit/">Edit Profile</a></li>
+                                <li><a href="/change_password/">Change Password</a></li>
+                                <li><a href="/logout/">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+         {% else %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/login/">Login</a></li>
+                        <li><a href="/register/">Register</a></li>
+                    </ul>
+                {% endif %}
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+  <div class="container-fluid">
+
+    
+      <div class="col-sm-12 ">
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+
+  </div>
+
+{% block body %}
+    <h1></h1>
+{% endblock %}
+
+  <footer class=" Footer navbar-inverse"   style="color:white; padding-top:10px; padding-bottom: 10px; ">
+  <div class="container-fluid">
+
+    <center clas="active"> <h4> Made By </h4> </center> 
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+        <div class="widget">
+          <h5 class="widgetheading">Our Contact</h5>
+          <address>
+          <strong>
+          </strong><br>
+            tower<br>
+            NewYork US.</address>
+          <p>
+            <i class="icon-phone"></i>  <br>
+            <i class="icon-envelope-alt"></i> email@test.com
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="widget">
+          <h5 class="widgetheading">Quick Links</h5>
+          <ul class="link-list">
+            <li><a href="#">Latest Events</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="widget">
+          <h5 class="widgetheading">Latest posts</h5>
+          <ul class="link-list">
+            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="widget">
+          <h5 class="widgetheading">Recent News</h5>
+          <ul class="link-list">
+            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
+            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="sub-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="copyright">
+            <p>
+              <span> 2018 All right reserved.  </span>
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "based.html" %}
+
+{% block content %}
+
+
+
+{% if car_list %}
+ 
+    <h1>Find a vehicle </h1>
+<ul>
+    {% for car in car_list %}
+ 
+    <li> <a href="{% url 'vehicle:detail' forloop.counter %}">{{ car.Vehicle_ID }}</a> </li>
+    {% endfor %}
+</ul>
+{#  In case  no product exists.  #}
+{% else %}
+<h3> No product found.</h3>
+{% endif %}
+
+{% endblock %}
